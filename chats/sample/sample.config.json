@@ -1,0 +1,9 @@
+{
+    "HostName": "sample",
+    "HostIP": "127.0.0.1",
+    "HostPort": 5001,
+    "Username": "admin",
+    "AllowedIPs": [],
+    "Type": 0,
+    "HasKey": 1
+}

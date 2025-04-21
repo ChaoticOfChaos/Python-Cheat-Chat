@@ -1,0 +1,9 @@
+{
+    "HostName": "sampleClient",
+    "HostIP": "127.0.0.1",
+    "HostPort": 5001,
+    "Username": "ADS",
+    "AllowedIPs": [],
+    "Type": 1,
+    "HasKey": 1
+}
