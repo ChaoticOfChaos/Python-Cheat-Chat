@@ -3,6 +3,7 @@ import json
 import makeHost
 import connection
 import shareKey
+import makeKey
 
 def outLogin():
     userInput = input('> ')
@@ -77,6 +78,7 @@ def outLogin():
             print('.help - Help')
             print('.share_key - Open a Connection to Share the Key')
             print('.get_key - Connect to a Host to Get a Key')
+            print('.make_key - Create a New Key')
 
         case ".chats":
             for e, i in enumerate(os.listdir('.\\chats')):
@@ -101,6 +103,11 @@ def outLogin():
 
             else:
                 print('ERROR - Chat Not Exists')
+
+        case ".make_key":
+            chatName = input('Chat Name -> ')
+            makeKey.makeKey(chatName)
+            print(f'New Key To : {chatName}')
 
         case _:
             print("Type '.help' to help")
