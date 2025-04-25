@@ -34,8 +34,8 @@ def startServer(host='0.0.0.0', porta=12345, AllowedList=[], username="host", ha
 
                 resposta = input(f"<{username}> -> ")
                 if hasKey == 1:
-                    resposta = makeKey.executeKey(chatName, resposta)
-                sender_resp = f"<{username}> -> " + resposta
+                    resposta = makeKey.executeKey(chatName, f"<{username}> -> " + resposta)
+                sender_resp = resposta
                 conexao.send(sender_resp.encode())
                 if resposta.lower() == '.exit':
                     print("[Server] You Leave.")

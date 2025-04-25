@@ -17,7 +17,7 @@ def outLogin():
                 pass
 
             newChatUsername = input("Chat Username -> ")
-            hostOrConnection = int(input("[0]Host Or [1]Connection"))
+            hostOrConnection = int(input("[0]Host Or [1]Connection ->"))
 
             hostIP = input("Host IP -> ")
             hostPort = int(input("Host Port -> "))

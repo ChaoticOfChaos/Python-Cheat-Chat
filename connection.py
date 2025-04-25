@@ -11,8 +11,8 @@ def startClient(host='0.0.0.0', porta=12345, username='client', hasKey=False, ch
         while True:
             mensagem = input(f"<{username}> -> ")
             if hasKey == 1:
-                mensagem = makeKey.executeKey(chatName, mensagem)
-            sender_msg = f"<{username}> -> " + mensagem
+                mensagem = makeKey.executeKey(chatName, f"<{username}> -> " + mensagem)
+            sender_msg = mensagem
             cliente.send(sender_msg.encode())
             if mensagem.lower() == '.exit':
                 print("[Client] You Leave.")
