@@ -1,9 +1,0 @@
-{
-    "HostName": "TestePhone",
-    "HostIP": "192.168.0.178",
-    "HostPort": 5001,
-    "Username": "Notebook",
-    "AllowedIPs": [],
-    "Type": 0,
-    "HasKey": 1
-}
