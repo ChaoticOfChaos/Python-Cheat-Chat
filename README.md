@@ -11,3 +11,6 @@ Simple Python Chat
 7. Execute the Main File With Python
 8. Make a Chat with (.new) Command (But Select the 'Connection' insted 'Host' Option)
 9. Done!
+
+## Update
+Now Python Cheat Chat is "Universal" Then Are Used "\\" From Windows, Now Use: "/" Who can be used in both platforms

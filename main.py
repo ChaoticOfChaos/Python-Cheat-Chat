@@ -12,7 +12,7 @@ def outLogin():
         case ".new":
             allowedIPs = ""
             newChatName = input("Chat Name -> ")
-            if (newChatName in os.listdir(".\\chats")):
+            if (newChatName in os.listdir("./chats")):
                 print('ERROR - Chat Already Exists')
                 pass
 
@@ -37,19 +37,19 @@ def outLogin():
                 jsonMaker["AllowedIPs"] = allowedIPs.split(';') if len(allowedIPs.split(';')) > 0 else []
 
 
-            os.system(f'mkdir .\\chats\\{newChatName}')
+            os.system(f'mkdir ./chats/{newChatName}')
 
-            with open(f'.\\chats\\{newChatName}\\{newChatName}.config.json', 'w', encoding='utf-8') as nJson:
+            with open(f'./chats/{newChatName}/{newChatName}.config.json', 'w', encoding='utf-8') as nJson:
                 json.dump(jsonMaker, nJson, indent=4, ensure_ascii=False)
 
         case ".open":
             chatName = input("Chat Name -> ")
 
-            if (not chatName in os.listdir('.\\chats')):
+            if (not chatName in os.listdir('./chats')):
                 print('ERROR - Chat Not Exists')
                 pass
 
-            with open(f'.\\chats\\{chatName}\\{chatName}.config.json', 'r', encoding='utf-8') as jsn:
+            with open(f'./chats/{chatName}/{chatName}.config.json', 'r', encoding='utf-8') as jsn:
                 data = json.load(jsn)
 
                 if (data["Type"] == 0):
@@ -61,11 +61,11 @@ def outLogin():
         case ".del":
             chatName = input('Chat Name -> ')
 
-            if chatName in os.listdir('.\\chats'):
+            if chatName in os.listdir('./chats'):
                 ask = input('[->!WARNING!<-]Are You Sure? ')
                 
                 if (ask.lower() in ['yes', 'y']):
-                    os.system(f'del .\\chats\\{chatName}')
+                    os.system(f'del ./chats/{chatName}')
 
             else:
                 print('ERROR - Chat Not Found')
@@ -81,12 +81,12 @@ def outLogin():
             print('.make_key - Create a New Key')
 
         case ".chats":
-            for e, i in enumerate(os.listdir('.\\chats')):
+            for e, i in enumerate(os.listdir('./chats')):
                 print(f'({e}) -> {i}')
 
         case ".share_key":
             chatName = input('Chat Name -> ')
-            if chatName in os.listdir('.\\chats'):
+            if chatName in os.listdir('./chats'):
                 hostIP = input('Host IP -> ')
                 hostPort = int(input('Host Port -> '))
                 shareKey.shareKey(hostIP, hostPort, chatName)
@@ -96,7 +96,7 @@ def outLogin():
 
         case ".get_key":
             chatName = input('Chat Name -> ')
-            if chatName in os.listdir('.\\chats'):
+            if chatName in os.listdir('./chats'):
                 hostIP = input('Host IP -> ')
                 hostPort = int(input('Host Port -> '))
                 shareKey.getKey(hostIP, hostPort, chatName)

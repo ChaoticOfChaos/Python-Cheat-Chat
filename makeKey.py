@@ -38,15 +38,15 @@ def makeKey(chatName: str, Random=1):
     rnd = dict(zip(keys, values))
     rev_rnd = dict(zip(values, keys))
     
-    with open(f".\\chats\\{chatName}\\key.json", 'w', encoding='utf-8') as nJson:
+    with open(f"./chats/{chatName}/key.json", 'w', encoding='utf-8') as nJson:
         json.dump(rnd, nJson, indent=4, ensure_ascii=False)
 
-    with open(f".\\chats\\{chatName}\\reverse.key.json", 'w', encoding='utf-8') as revKey:
+    with open(f"./chats/{chatName}/reverse.key.json", 'w', encoding='utf-8') as revKey:
         json.dump(rev_rnd, revKey, indent=4, ensure_ascii=False)
 
 def executeKey(chatName: str, text: str) -> str:
     convStr = ""
-    with open(f'.\\chats\\{chatName}\\key.json', 'r', encoding='utf-8') as jsn:
+    with open(f'./chats/{chatName}/key.json', 'r', encoding='utf-8') as jsn:
         dataKey = json.load(jsn)
 
         keyKeys = list(dataKey.keys())
@@ -61,7 +61,7 @@ def executeKey(chatName: str, text: str) -> str:
 
 def reverseKey(chatName: str, text: str) -> str:
     convStr = ""
-    with open(f'.\\chats\\{chatName}\\reverse.key.json', 'r', encoding='utf-8') as jsn:
+    with open(f'./chats/{chatName}/reverse.key.json', 'r', encoding='utf-8') as jsn:
         dataKey = json.load(jsn)
 
         keyKeys = list(dataKey.keys())
